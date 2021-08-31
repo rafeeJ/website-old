@@ -6,9 +6,7 @@ import Subscribe from '../components/Subscribe'
 export default function Home() {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        SewThis
-      </header>
+     
 
       <Subscribe />
 
