@@ -6,11 +6,11 @@ import HeadTop from '../components/HeadTop'
 
 export default function Home() {
   return (
-    
+
     <div className="flex flex-col flex-wrap bg-offwhite">
-      <HeadTop/>
-     <Header />
-     <Hero className="flex-shrink"/>
+      <HeadTop />
+      <Header />
+      <Hero className="flex-shrink" />
       <footer className="justify-items-center bg-offwhite flex-grow">
         <h1 className="font-serif text-center m-3">2021 Jenkins Company</h1>
       </footer>
