@@ -35,9 +35,10 @@ export default function Subscribe() {
   };
 
   return (
-    <form onSubmit={subscribe}>
-      <label htmlFor="email-input">{'Email Address'}</label>
+    <form onSubmit={subscribe} class="py-2">
+      <label class="block text-gray-700 text-xl font-serif mb-2" htmlFor="email-input">{'Enter your email'}</label>
       <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="email-input"
         name="email"
         placeholder="you@awesome.com"
@@ -45,12 +46,12 @@ export default function Subscribe() {
         required
         type="email"
       />
-      <div>
+      <div class="font-serif mt-2">
         {message
           ? message
-          : `I'll only send emails when new content is posted. No spam.`}
+          : `We will only send emails when there are new updates. No spam.`}
       </div>
-      <button type="submit">{'✨ Subscribe 💌'}</button>
+      <button class="bg-lightp hover:bg-darkp text-black font-serif py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">{'✨ Subscribe 💌'}</button>
     </form>
   );
 }
