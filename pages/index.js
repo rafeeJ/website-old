@@ -2,14 +2,17 @@ import styles from '../styles/Home.module.css'
 import Subscribe from '../components/Subscribe'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import HeadTop from '../components/HeadTop'
 
 export default function Home() {
   return (
-    <div class="flex flex-col flex-wrap">
+    
+    <div className="flex flex-col flex-wrap bg-offwhite">
+      <HeadTop/>
      <Header />
-     <Hero class="flex-shrink"/>
-      <footer class="justify-items-center" className={styles.footer}>
-        <h1 class="font-serif text-center">2021 Jenkins Company</h1>
+     <Hero className="flex-shrink"/>
+      <footer className="justify-items-center bg-offwhite flex-grow">
+        <h1 className="font-serif text-center m-3">2021 Jenkins Company</h1>
       </footer>
     </div>
   )
