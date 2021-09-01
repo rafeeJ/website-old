@@ -28,7 +28,7 @@ export default function Hero() {
             Let SewThis do all the hard work, you just keep looking good.
           </p>
           <p className="w-3/5 mt-4 text-gray-600 text-xl font-serif" aria-level="2">
-            We are almost ready to launch! Get email updated of our progress and be one of the first to try SewThis!
+            We are almost ready to launch! Get email updates of our progress and be one of the first to try SewThis!
           </p>
           <div className="mt-2 flex" aria-level="3" role="button">
             <Subscribe />
