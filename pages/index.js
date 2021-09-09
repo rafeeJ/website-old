@@ -3,6 +3,7 @@ import Subscribe from '../components/Subscribe'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import HeadTop from '../components/HeadTop'
+import Image from 'next/image'
 
 import Layout from '../components/Layout'
 
