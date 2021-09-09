@@ -8,7 +8,7 @@ export default function Hero() {
   const iphone = require('../public/phone.png')
   return (
     <div className="bg-offwhite">
-      <div className="m-4 sm:m-8 flex justify-center flex-col items-center sm:flex-row" role="main">
+      <div className="flex justify-center flex-col items-center sm:flex-row" role="main">
 
         <div className="m-8 sm:w-3/12 md:w-3/12 lg:w-1/5 order-last sm:order-first" role="img">
           <Image src={iphone}
@@ -16,7 +16,7 @@ export default function Hero() {
           />
         </div>
 
-        <div className="sm:px-8 mt-8 px-4 flex-grow sm:mr-30 md:mr-60">
+        <div className="sm:px-8 mt-8 px-4 flex-grow sm:mr-30 md:mr-20">
           <h1
             className="text-5xl font-serif tracking-tight text-gray-900 leading-snug"
             role="heading"
