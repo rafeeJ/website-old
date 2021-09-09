@@ -5,7 +5,7 @@ import Layout from '../../components/Layout'
 export default function Blog() {
   return (
     <Layout>
-      <text className="flex-grow">Fuck</text>
+      <text className="flex-grow">Welcome to the blog!</text>
     </Layout>
   )
 }
