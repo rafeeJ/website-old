@@ -11,8 +11,10 @@ export default function Layout({ children }) {
             <HeadTop />
             <Header className="h-10"/>
             <main className="mb-auto bg-offwhite mx-10">{children}</main>
-            <footer className="justify-items-center bg-offwhite h-10">
+            <footer className="justify-items-center bg-offwhite h-10 flex justify-center">
                 <h1 className="font-serif text-center m-3">{ new Date().getFullYear()} Rafee Jenkins</h1>
+                <h1 className="font-serif text-center m-3">-</h1>
+                <h1 className="font-serif text-center m-3 underline" onClick={() => {window.location.href = 'mailto:rafee@sewthis.co.uk'}}>Get in Touch</h1>
             </footer>
         </div>
     )
