@@ -14,10 +14,10 @@ export default function Hero() {
           <Image src={iphone} alt={'Phone Screenshot'}/>
         </div>
 
-        <div
-        onClick={() => {window.location.href = 'https://www.kickstarter.com/projects/rafeej/sewthis-by-abi'}} className="sm:px-8 mt-8 px-4 flex-grow sm:mr-30 md:mr-20">
+        <div className="sm:px-8 mt-8 px-4 flex-grow sm:mr-30 md:mr-20">
           <div className={"flex bg-green-300 rounded-lg justify-center p-5 items-center my-5"}>
           <h1
+          onClick={() => {window.location.href = 'https://www.kickstarter.com/projects/rafeej/sewthis-by-abi'}}
             className="text-4xl font-serif tracking-tight text-gray-900 leading-snug underline"
             role="heading"
             aria-level="1"
