@@ -17,12 +17,12 @@ export default function Hero() {
         <div className="sm:px-8 mt-8 px-4 flex-grow sm:mr-30 md:mr-20">
           <div className={"flex bg-green-300 rounded-lg justify-center p-5 items-center my-5"}>
           <h1
-          onClick={() => {window.location.href = 'https://www.kickstarter.com/projects/rafeej/sewthis-by-abi'}}
+          onClick={() => {window.location.href = 'https://www.kickstarter.com/projects/rafeej/sewthis-by-abi/posts/3331691'}}
             className="text-4xl font-serif tracking-tight text-gray-900 leading-snug underline"
             role="heading"
             aria-level="1"
           >
-            Support <span className="text-darkp">Sew</span><span className="text-lightp">This</span> on Kickstarter
+            We did it! <span className="text-darkp">Sew</span><span className="text-lightp">This</span> is funded! <br/> Read about it here.
           </h1>
           </div>
         

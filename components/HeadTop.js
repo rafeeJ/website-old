@@ -6,7 +6,7 @@ export default function HeadTop() {
   const p = require("../public/ST_Splash.png")
 
   const meta = {
-    title: "SewThis - Waiting List",
+    title: "SewThis - Your Favourite Sewing App!",
     description: `Let SewThis do all the hard work, you just keep looking good.`,
     image: p,
     type: "website",
