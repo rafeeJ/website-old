@@ -20,7 +20,7 @@ export default function Blog() {
       
       <text className="flex-grow">Welcome to the blog!</text>
       {posts?.docs.map((post) => (
-        <div style={{backgroundColor:'red'}}><h1>{post.data().title}</h1></div>
+        <div key={post.data().stub} style={{backgroundColor:'red'}}><h1>{post.data().title}</h1></div>
       ))}
     </Layout>
   )
