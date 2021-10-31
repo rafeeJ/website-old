@@ -6,8 +6,6 @@ export default function HeadTop() {
   const router = useRouter()
   const currentUrl = `https://sewthis.co.uk${router.asPath}`
 
-  console.log(currentUrl);
-
   const p = require("../public/ST_Splash.png")
 
   const meta = {
@@ -32,7 +30,7 @@ export default function HeadTop() {
         />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="SewThis" />
-        <meta property="og:description" content={meta.description} />
+        <meta property="og:description" content={meta.description} key="desc"/>
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
       </Head>

@@ -1,8 +1,7 @@
 import Header from '../components/Header'
 import HeadTop from '../components/HeadTop'
 
-export default function Layout({ children }, props) {
-
+export default function Layout({ children }) {
     return (
         <div className="flex flex-col bg-offwhite h-screen justify-between">
             <HeadTop />
