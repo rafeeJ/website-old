@@ -4,14 +4,14 @@ import { useRouter } from 'next/router'
 
 export default function HeadTop() {
   const router = useRouter()
-  const currentUrl = `https://sewthis.co.uk${router.asPath}`
+  const currentUrl = `https://rafeejenkins.com${router.asPath}`
 
   const p = require("../public/ST_Splash.png")
 
   const meta = {
-    title: "SewThis - Your Favourite Sewing App!",
-    description: `Let SewThis do all the hard work, you just keep looking good.`,
-    image: p,
+    title: "Rafee J. Jenkins",
+    description: `The personal website of Rafee Jenkins - Made with ♥ and ⚛`,
+    image: 'https://avatars1.githubusercontent.com/u/1508676?s=460&u=b2e51a0ca47547585614685cec42a1c16955986c&v=4',
     type: "website",
   };
   return (
@@ -29,7 +29,7 @@ export default function HeadTop() {
           href={currentUrl}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="SewThis" />
+        <meta property="og:site_name" content="Rafee J. Jenkins" />
         <meta property="og:description" content={meta.description} key="desc"/>
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />

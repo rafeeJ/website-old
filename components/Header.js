@@ -4,8 +4,8 @@ export default function Header() {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-offwhite p-3 sm:p-6">
       <div className="flex items-center flex-no-shrink text-white mr-6">
-        <span className="font-serif tracking-tight text-darkp text-2xl sm:text-4xl">Sew</span>
-        <span className="font-serif text-2xl tracking-tight text-lightp sm:text-4xl">This</span>
+        <span className="font-serif tracking-tight text-darkp text-2xl sm:text-4xl">Rafee</span>
+        <span className="font-serif text-2xl tracking-tight text-lightp sm:text-4xl">Jenkins</span>
       </div>
       {/* <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div className="text-sm lg:flex-grow">
