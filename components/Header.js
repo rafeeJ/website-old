@@ -112,21 +112,21 @@ export default function Header() {
             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a
                 href="#"
-                className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="hover:bg-gray-700 hover:text-white text-darkp block px-3 py-2 rounded-md text-base font-medium"
               >
                 Projects
               </a>
 
               <a
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Events
               </a>
 
               <a
                 href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 CV
               </a>
