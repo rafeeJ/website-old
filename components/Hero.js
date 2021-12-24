@@ -17,19 +17,19 @@ export default function Hero() {
         <div className="sm:px-8 px-4 flex-grow">
         {/* <div className="sm:px-8 mt-8 px-4 flex-grow sm:mr-30 md:mr-20"> */}
           <h1
-            className="text-5xl font-serif tracking-tight text-gray-900 leading-snug"
+            className="text-5xl font-merri tracking-tight text-gray-900 leading-snug"
             role="heading"
             aria-level="1"
           >
             Hi, I'm Rafee.
           </h1>
           
-          {/* <p className="w-3/5 mt-2 text-gray-600 text-3xl font-serif" aria-level="2"> */}
-          <p className="sm:w-3/5 mt-2 text-gray-600 text-3xl font-serif" aria-level="2">
+          {/* <p className="w-3/5 mt-2 text-gray-600 text-3xl font-merri" aria-level="2"> */}
+          <p className="sm:w-3/5 mt-2 text-gray-600 text-3xl font-merri" aria-level="2">
             I'm a computer science graduate working as a (graduate) software engineer at Lloyds Banking Group.
           </p>
 
-          <p className="w-3/5 mt-4 text-gray-600 text-xl font-serif" aria-level="2">
+          <p className="w-3/5 mt-4 text-gray-600 text-xl font-merri" aria-level="2">
             I am a big fan of tech, namely: React, React-Native, GoLang, and Python.
           </p>
           <div className="mt-2 flex" role="button">

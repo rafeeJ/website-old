@@ -14,7 +14,9 @@ module.exports = {
         'lightp': '#A3B9D8',
       },
       fontFamily: {
-        'serif': ['Butler']
+        'serif': ['Butler'],
+        'oswald': ['Oswald'],
+        'merri' : ['Merriweather']
       }
     },
   },
