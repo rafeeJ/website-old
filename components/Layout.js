@@ -3,7 +3,7 @@ import HeadTop from '../components/HeadTop'
 
 export default function Layout({ children }) {
     return (
-        <div className="flex flex-col bg-offwhite h-screen justify-between">
+        <div className="flex flex-col bg-offwhite min-h-screen justify-between">
             <HeadTop />
             <Header className="h-10"/>
             <main className="mb-auto bg-offwhite mx-10">{children}</main>

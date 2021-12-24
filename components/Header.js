@@ -1,5 +1,6 @@
 import { Transition } from '@headlessui/react';
 import React, { useState } from 'react';
+import Link from 'next/link'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,18 +25,19 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <span className="font-merri tracking-tight text-darkp text-2xl sm:text-4xl">Rafee</span>
-              <span className="font-merri text-2xl tracking-tight text-darkp sm:text-4xl">Jenkins</span>
+              <Link href={"/"}>
+              <span className="font-merri tracking-tight text-darkp text-2xl sm:text-4xl">Rafee Jenkins</span>
+              </Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-48 flex items-baseline space-x-4">
+                <Link href={"/projects"}>
                 <a
-                  href="#"
                   className="hover:bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium"
-                >
+                  >
                   Projects
                 </a>
-
+                  </Link>
                 <a
                   href="#"
                   className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -110,12 +112,14 @@ export default function Header() {
         {(ref) => (
           <div className="md:hidden" id="mobile-menu">
             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <Link href={"/projects"}>
               <a
                 href="#"
                 className="hover:bg-gray-700 hover:text-white text-darkp block px-3 py-2 rounded-md text-base font-medium"
-              >
+                >
                 Projects
               </a>
+                </Link>
 
               <a
                 href="#"
