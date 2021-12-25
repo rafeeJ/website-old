@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { storage } from '../firebase/clientApp';
 
@@ -32,9 +33,13 @@ export default function ProjectCard(props) {
                 </p>
             </div>
             <div className="px-6 pt-4 pb-2">
-                {props.project?.links?.map((t) =>{
+                {props.project?.links?.map((t, i) =>{
                     return(
-                        <span className="inline-block bg-darkp rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{t.title}</span>
+                        <Link key={i} href={t.url}>
+                            <span className="inline-block bg-darkp rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                                {t.title}
+                            </span>
+                        </Link>
                     )
                 })}
             </div>
