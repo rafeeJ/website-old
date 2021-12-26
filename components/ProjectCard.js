@@ -36,9 +36,9 @@ export default function ProjectCard(props) {
                 {props.project?.links?.map((t, i) =>{
                     return(
                         <Link key={i} href={t.url}>
-                            <span className="inline-block bg-darkp rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                            <a className="inline-block hover:bg-gray-700 hover:text-white bg-darkp rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                                 {t.title}
-                            </span>
+                            </a>
                         </Link>
                     )
                 })}

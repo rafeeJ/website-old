@@ -38,12 +38,13 @@ export default function Header() {
                   Projects
                 </a>
                   </Link>
+                <Link href={"/events"}>
                 <a
-                  href="#"
                   className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
+                  >
                   Events
                 </a>
+                  </Link>
                 <a
                   href="#"
                   className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
