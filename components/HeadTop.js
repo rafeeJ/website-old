@@ -11,7 +11,7 @@ export default function HeadTop() {
   const p = require("../public/ST_Splash.png")
 
   const meta = {
-    title: `Rafee Jenkins | ${path == '/' ? 'Home' : path}`,
+    title: `Rafee Jenkins | ${path == '/' ? 'Home' : 'Rafee Jenkins | ' + path.replace('/', '')}`,
     description: `The personal website of Rafee Jenkins - Made with ♥ and ⚛`,
     image: 'https://avatars1.githubusercontent.com/u/1508676?s=460&u=b2e51a0ca47547585614685cec42a1c16955986c&v=4',
     type: "website",
