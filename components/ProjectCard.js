@@ -44,9 +44,9 @@ export default function ProjectCard(props) {
                 })}
             </div>
             <div className="px-6 pt-4 pb-2">
-                {props.project?.tech?.map((t) =>{
+                {props.project?.tech?.map((t, i) =>{
                     return(
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{t}</span>
+                        <span key={i} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{t}</span>
                     )
                 })}
             </div>

@@ -19,12 +19,12 @@ export default function Hero() {
             role="heading"
             aria-level="1"
           >
-            Hi, I'm Rafee.
+            Hi, I&apos;m Rafee.
           </h1>
 
           <div className=''>
             <p className="mt-2 text-gray-600 text-3xl font-merri" aria-level="2">
-              I'm a computer science graduate working as a (graduate) software engineer at Lloyds Banking Group.
+              I am a computer science graduate working as a (graduate) software engineer at Lloyds Banking Group.
             </p>
 
             <p className="mt-4 text-gray-600 text-xl font-merri" aria-level="2">
