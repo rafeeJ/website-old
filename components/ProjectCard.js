@@ -20,7 +20,7 @@ export default function ProjectCard(props) {
         //   </div>
         // </div>
 
-        <div className="max-w-sm rounded-lg overflow-hidden shadow-lg mx-auto">
+        <div className="max-w-sm rounded-lg overflow-hidden shadow-lg mx-auto bg-white">
             {props.project?.thumbnail ? 
             <Image loader={imageLoader} width={400} height={400} className="" src={props.project?.thumbnail} alt="Sunset in the mountains" /> :
             <></>
