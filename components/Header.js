@@ -26,7 +26,7 @@ export default function Header() {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href={"/"}>
-              <span className="font-merri tracking-tight text-darkp text-2xl sm:text-4xl">Rafee Jenkins</span>
+              <a className="font-merri tracking-tight text-darkp text-2xl sm:text-4xl">Rafee Jenkins</a>
               </Link>
             </div>
             <div className="hidden md:block">
@@ -45,12 +45,14 @@ export default function Header() {
                   Events
                 </a>
                   </Link>
+                  <Link href={"/about"}>
                 <a
                   href="#"
                   className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  CV
+                  >
+                  About
                 </a>
+                  </Link>
               </div>
             </div>
           </div>
@@ -121,20 +123,20 @@ export default function Header() {
                 Projects
               </a>
                 </Link>
-
+                <Link href={"/events"}>
               <a
-                href="#"
                 className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
+                >
                 Events
               </a>
-
+                </Link>
+              <Link href={"/about"}>
               <a
-                href="#"
                 className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                CV
+                >
+                About
               </a>
+                </Link>
             </div>
           </div>
         )}
