@@ -1,14 +1,19 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from 'next/router'
 
 export default function HeadTop() {
+  const router = useRouter()
+  const currentUrl = `https://rafeejenkins.com${router.asPath}`
+
+  var path = router.asPath;
 
   const p = require("../public/ST_Splash.png")
 
   const meta = {
-    title: "SewThis - Your Favourite Sewing App!",
-    description: `Let SewThis do all the hard work, you just keep looking good.`,
-    image: p,
+    title: `Rafee Jenkins | ${path == '/' ? 'Home' : path.replace('/', '')}`,
+    description: `The personal website of Rafee Jenkins - Made with ♥ and ⚛`,
+    image: 'https://avatars1.githubusercontent.com/u/1508676?s=460&u=b2e51a0ca47547585614685cec42a1c16955986c&v=4',
     type: "website",
   };
   return (
@@ -19,15 +24,15 @@ export default function HeadTop() {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://sewthis.co.uk`}
+          content={currentUrl}
         />
         <link
           rel="canonical"
-          href={`https://sewthis.co.uk`}
+          href={currentUrl}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="SewThis" />
-        <meta property="og:description" content={meta.description} />
+        <meta property="og:site_name" content="Rafee J. Jenkins" />
+        <meta property="og:description" content={meta.description} key="desc"/>
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
       </Head>
