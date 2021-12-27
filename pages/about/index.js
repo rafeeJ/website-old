@@ -42,7 +42,7 @@ export default function About(props) {
               I have a fundemental understanding of DevOps and Agile working. 
               I am also a fan of Cloud computing. I have experience with GCP, Firebase (used for this site) and I am Azure certified.
               <br /><br />
-              When I'm not coding, you can find me in the gym, baking pizzas or pickling onions.
+              When I am not coding, you can find me in the gym, baking pizzas or pickling onions.
             </div>
             <button className="hover:bg-darkp bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium">
               <a className='px-auto' onClick={() => lol()}>
