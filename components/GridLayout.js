@@ -6,7 +6,6 @@ import ProjectCard from './ProjectCard';
 
 export default function GridLayout(props) {
 
-    console.log(props.collection);
 
     const [collectionInp, collectionLoading, collectionError] = useCollection(
         query(collection(db, props?.collection))

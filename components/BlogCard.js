@@ -2,8 +2,6 @@ import React from 'react';
 import Link from 'next/link'
 
 export default function BlogCard(props) {
-  console.log('props are:');
-  console.log(props);
   return (
     <Link href={`blog/${props?.post?.stub}`}>
     <div className={"flex flex-col flex-no-shrink " + props?.className}>

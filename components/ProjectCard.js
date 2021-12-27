@@ -2,8 +2,6 @@ import React from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { storage } from '../firebase/clientApp';
-
 export default function ProjectCard(props) {
     function imageLoader({ src, width }) {
         const relativeSrc = (src) => src.split("/").pop();
