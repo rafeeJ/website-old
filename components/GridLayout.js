@@ -18,9 +18,9 @@ export default function GridLayout(props) {
             <div className='pb-4'>
                 <span className='text-2xl sm:text-4xl font-merri'>{props.collection}</span>
             </div>
-            <div className="md:grid grid-cols-3 gap-16 content-evenly">
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-8 content-evenly ">
                 {collectionInp?.docs.map((doc, i) => {
-                    return(<ProjectCard key={i} className="md:my-48" project={doc.data()}/>)
+                    return(<ProjectCard key={i} className="md:my-8" project={doc.data()}/>)
                 })}
             </div>
                 </div>
