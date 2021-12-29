@@ -44,8 +44,8 @@ export default function About(props) {
               <br /><br />
               When I am not coding, you can find me in the gym, baking pizzas or pickling onions.
             </div>
-            <button className="hover:bg-darkp bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium">
-              <a className='px-auto' onClick={() => lol()}>
+            <button onClick={() => lol()} className="hover:bg-darkp bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium">
+              <a className='px-auto' >
                 Download my CV
               </a>
             </button>
