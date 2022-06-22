@@ -5,6 +5,9 @@ import Card from '../../components/Card';
 import Layout from '../../components/Layout';
 import Image from 'next/image'
 import Link from 'next/link'
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../../firebase/clientApp';
+import { useEffect } from 'react';
 
 export default function About(props) {
   const me = require('../../public/me.png')
@@ -17,9 +20,16 @@ export default function About(props) {
     axios.get(url, { responseType: 'blob', params: { 'mimeType': 'application/pdf' } })
       .then(res => {
         download(res.data, 'Rafee_Jenkins_CV.pdf', 'application/pdf')
+        logEvent(analytics, 'download_CV', { success: 'true'})
       })
       .catch(error => console.debug('Error getting file'))
   }
+
+  useEffect(() => {
+    logEvent(analytics, 'screen_view', {
+      firebase_screen: 'About'
+    })
+  }, [])
 
   return (
     <Layout>

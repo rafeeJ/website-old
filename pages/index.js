@@ -3,9 +3,19 @@ import Layout from '../components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
 import Card from '../components/Card'
+import { useEffect } from 'react'
+import { logEvent } from 'firebase/analytics'
+import { analytics } from '../firebase/clientApp'
 
 export default function Home() {
   const me = require('../public/me.png')
+
+  useEffect(() => {
+    logEvent(analytics, 'screen_view', {
+      firebase_screen: 'Home'
+    })
+  }, [])
+  
 
   return (
     <Layout>
