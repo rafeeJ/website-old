@@ -2,7 +2,7 @@ import axios from 'axios';
 import download from 'downloadjs';
 
 import { logEvent } from 'firebase/analytics';
-import { analytics } from '../firebase/clientApp';
+import { analytics } from './firebase/clientApp';
 
 export const downloadCV = async () => {
     let api = 'AIzaSyBNEBsNkrtbfsfeTX9Busa7Vfxwd0jqmLY'

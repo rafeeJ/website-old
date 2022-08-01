@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { useEffect } from 'react';
-import { downloadCV } from '../functions';
+import { downloadCV } from '../../functions';
 import { logEvent } from 'firebase/analytics';
 import { analytics } from '../../firebase/clientApp';
 

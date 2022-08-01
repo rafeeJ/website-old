@@ -1,7 +1,7 @@
 import { Transition } from '@headlessui/react';
 import React, { useState } from 'react';
 import Link from 'next/link'
-import { downloadCV } from '../pages/functions';
+import { downloadCV } from '../functions';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
