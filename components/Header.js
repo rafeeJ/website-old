@@ -1,6 +1,7 @@
 import { Transition } from '@headlessui/react';
 import React, { useState } from 'react';
 import Link from 'next/link'
+import { downloadCV } from '../functions';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -60,6 +61,13 @@ export default function Header() {
                   About
                 </a>
                   </Link>
+                  <a
+                  href="#"
+                  className="bg-darkp hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  onClick={() => downloadCV()}
+                  >
+                  Download my CV
+                </a>
               </div>
             </div>
           </div>
@@ -120,7 +128,7 @@ export default function Header() {
         leaveTo="opacity-0 scale-95"
       >
         {(ref) => (
-          <div className="md:hidden bg-gray-700" id="mobile-menu">
+          <div className="md:hidden bg-offwhite" id="mobile-menu">
             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href={"/"}>
               <a
@@ -152,6 +160,13 @@ export default function Header() {
                 About
               </a>
                 </Link>
+             
+              <a
+                className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => downloadCV()}
+                >
+                Download my CV!
+              </a>
             </div>
           </div>
         )}
