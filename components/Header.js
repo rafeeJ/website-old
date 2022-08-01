@@ -1,6 +1,7 @@
 import { Transition } from '@headlessui/react';
 import React, { useState } from 'react';
 import Link from 'next/link'
+import { downloadCV } from '../pages/functions';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -60,6 +61,13 @@ export default function Header() {
                   About
                 </a>
                   </Link>
+                  <a
+                  href="#"
+                  className="bg-darkp hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  onClick={() => downloadCV()}
+                  >
+                  Download my CV
+                </a>
               </div>
             </div>
           </div>

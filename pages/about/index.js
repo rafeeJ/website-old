@@ -1,29 +1,16 @@
-import axios from 'axios';
-import download from 'downloadjs';
 import React from 'react';
 import Card from '../../components/Card';
 import Layout from '../../components/Layout';
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { useEffect } from 'react';
+import { downloadCV } from '../functions';
 import { logEvent } from 'firebase/analytics';
 import { analytics } from '../../firebase/clientApp';
-import { useEffect } from 'react';
 
 export default function About(props) {
   const me = require('../../public/me.png')
-
-  async function lol() {
-    let api = 'AIzaSyBNEBsNkrtbfsfeTX9Busa7Vfxwd0jqmLY'
-    let fileId = '1vc9dFEC2lAJfe0yKKrAzCPP-jTnN_uF7eyFsC3Dn_h0'
-    let url = `https://www.googleapis.com/drive/v3/files/${fileId}/export?key=${api}&?mimetype=application/pdf`
-
-    axios.get(url, { responseType: 'blob', params: { 'mimeType': 'application/pdf' } })
-      .then(res => {
-        download(res.data, 'Rafee_Jenkins_CV.pdf', 'application/pdf')
-        logEvent(analytics, 'download_CV', { success: 'true'})
-      })
-      .catch(error => console.debug('Error getting file'))
-  }
 
   useEffect(() => {
     logEvent(analytics, 'screen_view', {
@@ -42,7 +29,7 @@ export default function About(props) {
             <Image src={me} alt={'Another picture of Rafee...'} />
           </div>
           <div className='flex flex-col justify-between my-8'>
-            <div className='text-lg'>
+            <div className='text-lg font-merri'>
               Hiya there, my name is Rafee and I am a software developer.
               <br /><br />
               I have been programming since I was in high school, when I created my first  iPhone app and have been hooked ever since.
@@ -54,11 +41,13 @@ export default function About(props) {
               <br /><br />
               When I am not coding, you can find me in the gym, baking pizzas or pickling onions.
             </div>
-            <button onClick={() => lol()} className="hover:bg-darkp bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium">
+            <div className='flex justify-center'>
+            <button onClick={() => downloadCV()} className="bg-darkp hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
               <a className='px-auto' >
                 Download my CV
               </a>
             </button>
+            </div>
           </div>
         </Card>
       </div>
