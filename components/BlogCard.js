@@ -3,15 +3,10 @@ import Link from 'next/link'
 
 export default function BlogCard(props) {
   return (
-    <Link href={`blog/${props?.post?.stub}`}>
-    <div className={"flex flex-col flex-no-shrink " + props?.className}>
-      <div className="bg-lightp rounded-t-lg p-2">
-        <span className="font-serif tracking-tight text-darkp text-4xl sm:text-2xl">{props?.post?.title}</span>
-      </div>
-      <div className="bg-white rounded-b-lg p-2">
-        <span className="font-serif tracking-tight text-darkp text-2xl sm:text-xl">{props?.post?.subTitle}</span>
-      </div>
+    <div className='bg-white rounded-md p-8 shadow'>
+      {title ? <div className='text-2xl font-merri pb-4'>{props.title}</div> : <></>}
+      
+      <div className='flex flex-col md:flex-row'>{props.children}</div>
     </div>
-    </Link>
   )
 }
