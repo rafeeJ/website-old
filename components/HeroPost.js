@@ -23,7 +23,7 @@ export default function HeroPost({
         </Link>
       </h3>
       <br />
-      <div className='font-merri'>
+      <div className='font-mono'>
         <Date dateString={date} />
         <br />
         <div

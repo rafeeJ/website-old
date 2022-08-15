@@ -8,8 +8,8 @@ export default function Header() {
   // return (
   //   <nav className="flex items-center justify-between flex-wrap bg-offwhite p-3 sm:p-6">
   //     <div className="flex items-center flex-no-shrink text-white mr-6">
-  //       <span className="font-serif tracking-tight text-darkp text-2xl sm:text-4xl">Rafee</span>
-  //       <span className="font-serif text-2xl tracking-tight text-lightp sm:text-4xl">Jenkins</span>
+  //       <span className="font-mono tracking-tight text-darkp text-2xl sm:text-4xl">Rafee</span>
+  //       <span className="font-mono text-2xl tracking-tight text-lightp sm:text-4xl">Jenkins</span>
   //     </div>
   //     <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
   //       <div className="text-sm lg:flex-grow">
@@ -21,13 +21,13 @@ export default function Header() {
   //   </nav>
   // )
   return (
-    <nav className="bg-offwhite">
+    <nav className="bg-offwhite font-mono">
       <div className="max-w-7xl ml-10 pr-4 sm:pr-6 lg:pr-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href={"/"}>
-              <a className="font-merri tracking-tight text-darkp text-2xl sm:text-4xl">Rafee Jenkins</a>
+              <a className="font-mono tracking-tight text-darkp text-2xl sm:text-4xl">Rafee Jenkins</a>
               </Link>
             </div>
             <div className="hidden md:block">

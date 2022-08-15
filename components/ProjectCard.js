@@ -9,16 +9,8 @@ export default function ProjectCard(props) {
       }
 
     return (
-        // <div className={"flex flex-col flex-no-shrink " + props?.title}>
-        //   <div className="bg-lightp rounded-t-lg p-2">
-        //     <span className="font-serif tracking-tight text-darkp text-4xl sm:text-2xl">{props?.project?.title}</span>
-        //   </div>
-        //   <div className="bg-white rounded-b-lg p-2">
-        //     <span className="font-serif tracking-tight text-darkp text-2xl sm:text-xl">{props?.project?.subtitle}</span>
-        //   </div>
-        // </div>
-
-        <div className="max-w-sm rounded-lg overflow-hidden shadow-lg mx-auto bg-white">
+      
+        <div className="max-w-sm rounded-lg overflow-hidden shadow-lg mx-auto bg-white font-mono">
             {props.project?.thumbnail ? 
             <Image loader={imageLoader} width={400} height={400} className="" src={props.project?.thumbnail} alt="Sunset in the mountains" /> :
             <></>

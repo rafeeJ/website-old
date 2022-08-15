@@ -16,7 +16,7 @@ export default function GridLayout(props) {
         <Layout>
             <div className='pb-4'>
             <div className='pb-4'>
-                <span className='text-2xl sm:text-4xl font-merri'>{props.collection}</span>
+                <span className='text-2xl sm:text-4xl font-mono'>{props.collection}</span>
             </div>
             <div className="grid md:grid-cols-3 grid-cols-1 gap-8 content-evenly ">
                 {collectionInp?.docs.map((doc, i) => {

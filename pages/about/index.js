@@ -22,14 +22,14 @@ export default function About(props) {
     <Layout>
       <div className='pb-4'>
         <div className='pb-4'>
-          <span className='text-2xl sm:text-4xl font-merri'>about</span>
+          <span className='text-2xl sm:text-4xl font-mono'>about</span>
         </div>
         <Card title="Hiya! I'm Rafee">
           <div className="m-8 order-first" role="img">
             <Image src={me} alt={'Another picture of Rafee...'} />
           </div>
           <div className='flex flex-col justify-between my-8'>
-            <div className='text-lg font-merri'>
+            <div className='text-lg font-mono'>
               Hiya there, my name is Rafee and I am a software developer.
               <br /><br />
               I have been programming since I was in high school, when I created my first  iPhone app and have been hooked ever since.

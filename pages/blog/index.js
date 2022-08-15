@@ -12,7 +12,7 @@ export default function Index({ allPosts: { edges }, preview }) {
   return (
     <Layout>
       <div className='pb-4'>
-        <span className='text-2xl sm:text-4xl font-merri'>blog</span>
+        <span className='text-2xl sm:text-4xl font-mono'>blog</span>
       </div>
       <div>
         This is a space where I can drop some thoughts

@@ -36,7 +36,7 @@ export default function Subscribe() {
 
   return (
     <form onSubmit={subscribe} className="py-2">
-      <label className="block text-gray-700 text-xl font-serif mb-2" htmlFor="email-input">{'Enter your email'}</label>
+      <label className="block text-gray-700 text-xl font-mono mb-2" htmlFor="email-input">{'Enter your email'}</label>
       <input
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="email-input"
@@ -46,12 +46,12 @@ export default function Subscribe() {
         required
         type="email"
       />
-      <div className="font-serif mt-2">
+      <div className="font-mono mt-2">
         {message
           ? message
           : `We will only send emails when there are new updates. No spam.`}
       </div>
-      <button className="bg-lightp hover:bg-darkp text-black font-serif py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">{'✨ Subscribe 💌'}</button>
+      <button className="bg-lightp hover:bg-darkp text-black font-mono py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">{'✨ Subscribe 💌'}</button>
     </form>
   );
 }
