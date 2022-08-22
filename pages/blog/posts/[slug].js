@@ -19,17 +19,7 @@ export default function Post({ post, posts, preview }) {
 
   return (
     <Layout head={BlogHead}>
-      <Head>
-        <title>
-        Rafee Jenkins | {post.title} 
-        </title>
-        <meta
-          property="og:image"
-          content={post.featuredImage?.sourceUrl}
-        />
-        <meta property="og:description" content={post.excerpt} key="desc"/>
-
-      </Head>
+      
 
 
       <div className='pb-4 font-mono'>
@@ -44,25 +34,42 @@ export default function Post({ post, posts, preview }) {
           ) : (
             <>
               <article>
+
+              <Head>
+        <title>
+        Rafee Jenkins | {post?.title} 
+        </title>
+        {
+          post?.featuredImage?.sourceUrl ?
+          <meta
+          property="og:image"
+          content={post.featuredImage?.sourceUrl}
+        />:
+          <></>
+        }
+        
+        <meta property="og:description" content={post.excerpt} key="desc"/>
+
+      </Head>
                 <div className='pb-4 font-mono'>
-                  <span className='text-2xl sm:text-3xl font-mono font-semibold'>{post.title}</span>
+                  <span className='text-2xl sm:text-3xl font-mono font-semibold'>{post?.title}</span>
                 </div>
                 <PostHeader
-                  displayImage={post.featuredImage}
-                  date={post.date}
-                  author={post.author}
-                  categories={post.categories}
+                  displayImage={post?.featuredImage}
+                  date={post?.date}
+                  author={post?.author}
+                  categories={post?.categories}
                 />
                 <div
                   className=''
-                  dangerouslySetInnerHTML={{ __html: post.content }}
+                  dangerouslySetInnerHTML={{ __html: post?.content }}
                 />
 
 
 
 
                 <footer>
-                  {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
+                  {post?.tags.edges.length > 0 && <Tags tags={post?.tags} />}
                 </footer>
               </article>
 

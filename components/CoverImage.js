@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 
 export default function CoverImage({ title, coverImage, slug }) {
   const myLoader=({src}) => {
-    console.log(src)
     return `https://rafee-blog.azurewebsites.net${src}`
   }
 
