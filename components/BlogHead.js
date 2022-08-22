@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from 'next/router'
 
-export default function HeadTop() {
+export default function BlogHead() {
   const router = useRouter()
   const currentUrl = `https://rafeejenkins.com${router.asPath}`
 

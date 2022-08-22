@@ -1,10 +1,14 @@
 import Header from '../components/Header'
 import HeadTop from '../components/HeadTop'
 
-export default function Layout({ children }) {
+export default function Layout({ children, head }) {
     return (
         <div className="flex flex-col bg-offwhite min-h-screen justify-between">
-            <HeadTop />
+            {
+                head ?
+                head :
+                <HeadTop />
+            }
             <Header className="h-10"/>
             <main className="mb-auto bg-offwhite mx-10">{children}</main>
             <footer className="justify-items-center bg-offwhite h-10 flex justify-center">

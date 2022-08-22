@@ -11,20 +11,26 @@ export default function Index({ allPosts: { edges }, preview }) {
 
   return (
     <Layout>
-      <div className='pb-4'>
+      <div className='pb-4 font-mono'>
         <span className='text-2xl sm:text-4xl font-mono'>blog</span>
       </div>
-      <div>
+      <div className='font-mono mb-4'>
         This is a space where I can drop some thoughts
       </div>
+      <div className='md:px-32 md:py-5'>
       <HeroPost
         title={heroPost.title}
         date={heroPost.date}
         author={heroPost.author}
         slug={heroPost.slug}
         excerpt={heroPost.excerpt}
+        coverImage={heroPost.featuredImage}
       />
+      <div className='my-4'>
       <MoreStories posts={morePosts} />
+
+      </div>
+      </div>
     </Layout>
   )
 }

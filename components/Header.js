@@ -5,21 +5,7 @@ import { downloadCV } from '../functions';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  // return (
-  //   <nav className="flex items-center justify-between flex-wrap bg-offwhite p-3 sm:p-6">
-  //     <div className="flex items-center flex-no-shrink text-white mr-6">
-  //       <span className="font-mono tracking-tight text-darkp text-2xl sm:text-4xl">Rafee</span>
-  //       <span className="font-mono text-2xl tracking-tight text-lightp sm:text-4xl">Jenkins</span>
-  //     </div>
-  //     <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-  //       <div className="text-sm lg:flex-grow">
-  //       </div>
-  //       <div>
-  //         <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">Download</a>
-  //       </div>
-  //     </div>
-  //   </nav>
-  // )
+
   return (
     <nav className="bg-offwhite font-mono">
       <div className="max-w-7xl ml-10 pr-4 sm:pr-6 lg:pr-8">
