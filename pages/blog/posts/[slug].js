@@ -18,7 +18,7 @@ export default function Post({ post, posts, preview }) {
   }
 
   return (
-    <Layout head={BlogHead}>
+    <Layout head={<BlogHead />}>
       
 
 
@@ -26,13 +26,13 @@ export default function Post({ post, posts, preview }) {
         <span className='text-2xl sm:text-4xl font-mono'>blog</span>
       </div>
       <div className='md:px-32 md:py-5'>
-        <div className="bg-white rounded-md p-8 shadow">
           {router.isFallback ? (
             <div className='pb-4 font-mono'>
               <span className='text-2xl sm:text-3xl font-mono font-semibold'>Loading</span>
             </div>
           ) : (
             <>
+                    <div className="bg-white rounded-md p-8 shadow">
               <article>
 
               <Head>
@@ -43,9 +43,10 @@ export default function Post({ post, posts, preview }) {
           post?.featuredImage?.sourceUrl ?
           <meta
           property="og:image"
-          content={post.featuredImage?.sourceUrl}
+          content={`https://rafee-blog.azurewebsites.net${post.featuredImage?.sourceUrl}`}
         />:
-          <></>
+        <meta property="og:image" content={'https://avatars1.githubusercontent.com/u/1508676?s=460&u=b2e51a0ca47547585614685cec42a1c16955986c&v=4'} />
+
         }
         
         <meta property="og:description" content={post.excerpt} key="desc"/>
@@ -72,12 +73,12 @@ export default function Post({ post, posts, preview }) {
                   {post?.tags.edges.length > 0 && <Tags tags={post?.tags} />}
                 </footer>
               </article>
+              </div>
 
               <SectionSeparator />
               {morePosts.length > 0 && <MoreStories posts={morePosts} />}
             </>
           )}
-        </div>
       </div>
     </Layout>
   )
