@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function BlogCard(props) {
   return (
-    <Link href={`blog/${props?.post?.stub}`}>
+    <Link href={`blog/${props?.post?.stub}`} legacyBehavior>
     <div className={"flex flex-col flex-no-shrink " + props?.className}>
       <div className="bg-lightp rounded-t-lg p-2">
         <span className="font-serif tracking-tight text-darkp text-4xl sm:text-2xl">{props?.post?.title}</span>
@@ -13,5 +13,5 @@ export default function BlogCard(props) {
       </div>
     </div>
     </Link>
-  )
+  );
 }

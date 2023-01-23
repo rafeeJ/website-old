@@ -12,40 +12,41 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link href={"/"}>
-                <a className="font-merri tracking-tight text-darkp text-2xl sm:text-4xl">Rafee Jenkins</a>
+              <Link
+                href={"/"}
+                className="font-merri tracking-tight text-darkp text-2xl sm:text-4xl">
+                Rafee Jenkins
               </Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-48 flex items-baseline space-x-4">
-                <Link href={"/"}>
-                  <a
-                    className="hover:bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                <Link
+                  href={"/"}
+                  className="hover:bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium">
+                  
                     Home
-                  </a>
+                  
                 </Link>
-                <Link href={"/projects"}>
-                  <a
-                    className="hover:bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                <Link
+                  href={"/projects"}
+                  className="hover:bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium">
+                  
                     Projects
-                  </a>
+                  
                 </Link>
-                <Link href={"/events"}>
-                  <a
-                    className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                <Link
+                  href={"/events"}
+                  className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  
                     Events
-                  </a>
+                  
                 </Link>
-                <Link href={"/about"}>
-                  <a
-                    href="#"
-                    className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
+                <Link
+                  href={"/about"}
+                  className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  
                     About
-                  </a>
+                  
                 </Link>
                 <a
                   href="#"
@@ -116,35 +117,33 @@ export default function Header() {
         {(ref) => (
           <div className="md:hidden bg-offwhite" id="mobile-menu">
             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link href={"/"}>
-                <a
-                  href="#"
-                  className="hover:bg-gray-700 hover:text-white text-darkp block px-3 py-2 rounded-md text-base font-medium"
-                >
+              <Link
+                href={"/"}
+                className="hover:bg-gray-700 hover:text-white text-darkp block px-3 py-2 rounded-md text-base font-medium">
+                
                   Home
-                </a>
+                
               </Link>
-              <Link href={"/projects"}>
-                <a
-                  href="#"
-                  className="hover:bg-gray-700 hover:text-white text-darkp block px-3 py-2 rounded-md text-base font-medium"
-                >
+              <Link
+                href={"/projects"}
+                className="hover:bg-gray-700 hover:text-white text-darkp block px-3 py-2 rounded-md text-base font-medium">
+                
                   Projects
-                </a>
+                
               </Link>
-              <Link href={"/events"}>
-                <a
-                  className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
+              <Link
+                href={"/events"}
+                className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                
                   Events
-                </a>
+                
               </Link>
-              <Link href={"/about"}>
-                <a
-                  className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
+              <Link
+                href={"/about"}
+                className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                
                   About
-                </a>
+                
               </Link>
 
               <a
@@ -158,5 +157,5 @@ export default function Header() {
         )}
       </Transition>
     </nav>
-  )
+  );
 }

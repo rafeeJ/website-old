@@ -45,7 +45,7 @@ export default function Home() {
                 I am a big fan of tech, namely: React, React-Native, GoLang, and Python.
               </p>
               <p className="mt-4 text-gray-600 text-xl font-merri" aria-level="2">
-                You can read about some of my past and current projects over on the <Link href={'/projects'}><a className='font-extrabold underline text-darkp'>projects</a></Link> page.      
+                You can read about some of my past and current projects over on the <Link href={'/projects'} className='font-extrabold underline text-darkp'>projects</Link> page.      
               </p>
               <p className="mt-4 text-gray-600 text-xl font-merri" aria-level="2">
                   If you would like to get in touch, just tap the link in the footer! 
@@ -55,5 +55,5 @@ export default function Home() {
         </div>
       </Card>
     </Layout>
-  )
+  );
 }
