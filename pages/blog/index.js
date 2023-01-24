@@ -4,30 +4,29 @@ import Link from "next/link"
 import dayjs from 'dayjs'
 import { getAllArticles } from '../../src/utils/mdx'
 import Layout from '../../components/Layout'
+import { Card, Grid } from '@mui/material'
+import BlogCard from '../../components/BlogCard'
 
 export default function BlogPage({ posts }) {
     return (
         <Layout>
+            <div className='pb-4'>
+                <span className='text-2xl sm:text-4xl font-merri'>blog</span>
+            </div>
 
             <React.Fragment>
-                <Head>
-                    <title>My Blog</title>
-                </Head>
                 <div>
-                    {posts.map((frontMatter, idx) => {
-                        return (
-                            <Link key={idx} href={`/blog/${frontMatter.slug}`} passHref>
-                                <div>
-                                    <h1 className="title">{frontMatter.title}</h1>
-                                    <p className="summary">{frontMatter.excerpt}</p>
-                                    <p className="date">
-                                        {dayjs(frontMatter.publishedAt).format('MMMM D, YYYY')} &mdash;{' '}
-                                        {frontMatter.readingTime}
-                                    </p>
-                                </div>
-                            </Link>
-                        )
-                    })}
+                    <Grid container columns={{ xs: 2, md: 3 }} spacing={2}>
+
+                        {
+                            posts.map((frontMatter, idx) => {
+                                return (
+                                    <Grid item key={idx} xs={1} >
+                                        <BlogCard info={frontMatter} />
+                                    </Grid>
+                                )
+                            })}
+                    </Grid>
                 </div>
             </React.Fragment>
         </Layout>

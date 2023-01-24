@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.4.2",
     "@mailchimp/mailchimp_marketing": "^3.0.59",
+    "@mui/material": "^5.11.6",
     "axios": "^0.24.0",
     "dayjs": "^1.11.7",
     "downloadjs": "^1.4.7",
