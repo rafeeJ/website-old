@@ -10,24 +10,26 @@ import 'highlight.js/styles/atom-one-dark-reasonable.css'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import dayjs from 'dayjs'
 import { getArticleFromSlug, getSlug } from '../../src/utils/mdx'
+import Layout from '../../components/Layout'
+import { Divider } from '@mui/material'
 
 export default function Blog({ post: { source, frontmatter } }) {
     return (
-        <React.Fragment>
-            <Head>
-                <title>{frontmatter.title} | My blog</title>
-            </Head>
+        <Layout>
+            <div className='pb-4'>
+                <span className='text-2xl sm:text-4xl font-merri'>{frontmatter.title}</span>
+            </div>
             <div className="article-container">
-                <h1 className="article-title">{frontmatter.title}</h1>
                 <p className="publish-date">
                     {dayjs(frontmatter.publishedAt).format('MMMM D, YYYY')} &mdash;{' '}
                     {frontmatter.readingTime}
                 </p>
+                <Divider />
                 <div className="content">
                     <MDXRemote {...source} components={{ Image }} />
                 </div>
             </div>
-        </React.Fragment>
+        </Layout>
     )
 }
 

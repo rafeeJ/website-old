@@ -14,21 +14,17 @@ export default function BlogPage({ posts }) {
                 <span className='text-2xl sm:text-4xl font-merri'>blog</span>
             </div>
 
-            <React.Fragment>
-                <div>
-                    <Grid container columns={{ xs: 2, md: 3 }} spacing={2}>
+            <Grid container columns={{ xs: 2, md: 3 }} spacing={2}>
 
-                        {
-                            posts.map((frontMatter, idx) => {
-                                return (
-                                    <Grid item key={idx} xs={1} >
-                                        <BlogCard info={frontMatter} />
-                                    </Grid>
-                                )
-                            })}
-                    </Grid>
-                </div>
-            </React.Fragment>
+                {
+                    posts.map((frontMatter, idx) => {
+                        return (
+                            <Grid item key={idx} xs={1} >
+                                <BlogCard info={frontMatter} />
+                            </Grid>
+                        )
+                    })}
+            </Grid>
         </Layout>
 
     )
