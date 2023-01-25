@@ -14,7 +14,7 @@ export default function BlogPage({ posts }) {
                 <span className='text-2xl sm:text-4xl font-merri'>blog</span>
             </div>
 
-            <Grid container columns={{ xs: 2, md: 3 }} spacing={2}>
+            <Grid container columns={{ xs: 1, md: 3 }} spacing={2}>
 
                 {
                     posts.map((frontMatter, idx) => {

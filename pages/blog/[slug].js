@@ -11,11 +11,12 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import dayjs from 'dayjs'
 import { getArticleFromSlug, getSlug } from '../../src/utils/mdx'
 import Layout from '../../components/Layout'
-import { Divider } from '@mui/material'
+import { Card, Divider } from '@mui/material'
+import { useRouter } from 'next/router'
 
 export default function Blog({ post: { source, frontmatter } }) {
     return (
-        <Layout>
+        <Layout header={<BlogHead title={frontmatter.title} tagline={frontmatter.excerpt} />}>
             <div className='pb-4'>
                 <span className='text-2xl sm:text-4xl font-merri'>{frontmatter.title}</span>
             </div>
@@ -24,12 +25,39 @@ export default function Blog({ post: { source, frontmatter } }) {
                     {dayjs(frontmatter.publishedAt).format('MMMM D, YYYY')} &mdash;{' '}
                     {frontmatter.readingTime}
                 </p>
-                <Divider />
-                <div className="content">
-                    <MDXRemote {...source} components={{ Image }} />
-                </div>
+                <Divider className='m-2' />
+                <Card className='p-4'>
+                    <div className="content">
+                        <MDXRemote {...source} components={{ Image }} />
+                    </div>
+                </Card>
             </div>
         </Layout>
+    )
+}
+
+const BlogHead = ({ title, tagline }) => {
+
+    const router = useRouter()
+    const currentUrl = `https://rafeejenkins.com${router.asPath}`
+    return (
+        <Head>
+            <title>{title} | Rafee Jenkins</title>
+            <meta name="robots" content="follow, index" />
+            <meta content={tagline} name="description" />
+            <meta
+                property="og:url"
+                content={currentUrl}
+            />
+            <link
+                rel="canonical"
+                href={currentUrl}
+            />
+            <meta property="og:type" content={"website"} />
+            <meta property="og:site_name" content="GetHalal" />
+            <meta property="og:description" content={tagline} key="desc" />
+            <meta property="og:title" content={title} />
+        </Head>
     )
 }
 
