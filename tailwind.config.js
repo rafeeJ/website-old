@@ -16,12 +16,12 @@ module.exports = {
       fontFamily: {
         'serif': ['Butler'],
         'oswald': ['Oswald'],
-        'merri' : ['Merriweather']
+        'merri': ['Merriweather']
       }
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 }

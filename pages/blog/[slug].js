@@ -20,17 +20,18 @@ export default function Blog({ post: { source, frontmatter } }) {
             <div className='pb-4'>
                 <span className='text-2xl sm:text-4xl font-merri'>{frontmatter.title}</span>
             </div>
-            <div className="article-container">
+            <div className="article-container justify-center">
                 <p className="publish-date">
                     {dayjs(frontmatter.publishedAt).format('MMMM D, YYYY')} &mdash;{' '}
                     {frontmatter.readingTime}
                 </p>
-                <Divider className='m-2' />
-                <Card className='p-4'>
-                    <div className="content">
-                        <MDXRemote {...source} components={{ Image }} />
-                    </div>
-                </Card>
+                <div className='flex justify-center'>
+                    <Card className='p-4 inline-flex align-middle'>
+                        <div className="content prose-sm md:prose dark:prose-invert">
+                            <MDXRemote {...source} components={{ Image }} />
+                        </div>
+                    </Card>
+                </div>
             </div>
         </Layout>
     )
