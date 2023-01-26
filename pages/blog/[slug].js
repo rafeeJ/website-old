@@ -18,16 +18,18 @@ export default function Blog({ post: { source, frontmatter } }) {
     return (
         <Layout header={<BlogHead title={frontmatter.title} tagline={frontmatter.excerpt} />}>
             <div className='pb-4'>
-                <span className='text-2xl sm:text-4xl font-merri'>{frontmatter.title}</span>
+                <span className='text-2xl sm:text-4xl font-merri'>blog</span>
             </div>
             <div className="article-container justify-center">
-                <p className="publish-date">
-                    {dayjs(frontmatter.publishedAt).format('MMMM D, YYYY')} &mdash;{' '}
-                    {frontmatter.readingTime}
-                </p>
                 <div className='flex justify-center'>
                     <Card className='p-4 inline-flex align-middle'>
                         <div className="content prose-sm md:prose dark:prose-invert">
+                            <h1>{frontmatter.title}</h1>
+                            <p className="publish-date">
+                                {dayjs(frontmatter.publishedAt).format('MMMM D, YYYY')} &mdash;{' '}
+                                {frontmatter.readingTime}
+                            </p>
+                            <Divider className='not-prose' />
                             <MDXRemote {...source} components={{ Image }} />
                         </div>
                     </Card>
