@@ -16,7 +16,7 @@ import { useRouter } from 'next/router'
 
 export default function Blog({ post: { source, frontmatter } }) {
     return (
-        <Layout header={<BlogHead title={frontmatter.title} tagline={frontmatter.excerpt} />}>
+        <Layout header={<BlogHead title={frontmatter.title} tagline={frontmatter.excerpt} keywords={frontmatter.keywords} />}>
             <div className='pb-4'>
                 <span className='text-2xl sm:text-4xl font-merri'>blog</span>
             </div>
@@ -40,7 +40,7 @@ export default function Blog({ post: { source, frontmatter } }) {
     )
 }
 
-const BlogHead = ({ title, tagline }) => {
+const BlogHead = ({ title, tagline, keywords }) => {
 
     const router = useRouter()
     const currentUrl = `https://rafeejenkins.com${router.asPath}`
@@ -53,6 +53,7 @@ const BlogHead = ({ title, tagline }) => {
                 property="og:url"
                 content={currentUrl}
             />
+            <meta name='keywords' content={keywords} />
             <link
                 rel="canonical"
                 href={currentUrl}
