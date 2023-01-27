@@ -21,15 +21,16 @@ export default function Blog({ post: { source, frontmatter } }) {
                 <span className='text-2xl sm:text-4xl font-merri'>blog</span>
             </div>
             <div className="article-container justify-center">
-                <div className='flex justify-center'>
+                <div className='flex justify-center pb-2'>
                     <Card className='p-4 inline-flex align-middle'>
                         <div className="content prose-sm md:prose dark:prose-invert">
                             <h1>{frontmatter.title}</h1>
+                            <p>By {frontmatter.author}</p>
                             <p className="publish-date">
                                 {dayjs(frontmatter.publishedAt).format('MMMM D, YYYY')} &mdash;{' '}
                                 {frontmatter.readingTime}
                             </p>
-                            <Divider className='not-prose' />
+                            <div className='not-prose m-0 border border-black/25 mb-2' />
                             <MDXRemote {...source} components={{ Image }} />
                         </div>
                     </Card>
