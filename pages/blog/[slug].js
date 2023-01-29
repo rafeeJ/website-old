@@ -13,10 +13,11 @@ import { getArticleFromSlug, getSlug } from '../../src/utils/mdx'
 import Layout from '../../components/Layout'
 import { Card, Divider } from '@mui/material'
 import { useRouter } from 'next/router'
+import me from '../../public/me.png'
 
 export default function Blog({ post: { source, frontmatter } }) {
     return (
-        <Layout header={<BlogHead title={frontmatter.title} tagline={frontmatter.excerpt} keywords={frontmatter.keywords} />}>
+        <Layout header={<BlogHead title={frontmatter.title} tagline={frontmatter.excerpt} keywords={frontmatter.keywords} img={frontmatter.featuredImage} />}>
             <div className='pb-4'>
                 <span className='text-2xl sm:text-4xl font-merri'>blog</span>
             </div>
@@ -24,14 +25,18 @@ export default function Blog({ post: { source, frontmatter } }) {
                 <div className='flex justify-center pb-2'>
                     <Card className='p-4 inline-flex align-middle'>
                         <div className="content prose-sm md:prose dark:prose-invert">
+                            <Image src={frontmatter.featuredImage} alt={'Header Image'} width={1000} height={200} />
                             <h1>{frontmatter.title}</h1>
-                            <p>By {frontmatter.author}</p>
+
+
                             <p className="publish-date">
                                 {dayjs(frontmatter.publishedAt).format('MMMM D, YYYY')} &mdash;{' '}
                                 {frontmatter.readingTime}
                             </p>
                             <div className='not-prose m-0 border border-black/25 mb-2' />
                             <MDXRemote {...source} components={{ Image }} />
+                            <div className='not-prose m-0 border border-black/25 mb-2' />
+                            <Author />
                         </div>
                     </Card>
                 </div>
@@ -40,7 +45,25 @@ export default function Blog({ post: { source, frontmatter } }) {
     )
 }
 
-const BlogHead = ({ title, tagline, keywords }) => {
+const Author = () => {
+    return (
+        <div className='flex items-center'>
+            <div className='flex-shrink-0'>
+                <Image
+                    className='rounded-full'
+                    src={me}
+                    alt={'Rafee Jenkins'}
+                    width={50}
+                    height={50}
+                />
+            </div>
+            Written by Rafee Jenkins
+        </div>
+    )
+}
+
+
+const BlogHead = ({ title, tagline, keywords, img }) => {
 
     const router = useRouter()
     const currentUrl = `https://rafeejenkins.com${router.asPath}`
@@ -59,9 +82,11 @@ const BlogHead = ({ title, tagline, keywords }) => {
                 href={currentUrl}
             />
             <meta property="og:type" content={"website"} />
-            <meta property="og:site_name" content="GetHalal" />
+            <meta property="og:site_name" content="Rafee Jenkins' Personal Site" />
             <meta property="og:description" content={tagline} key="desc" />
-            <meta property="og:title" content={title} />
+            <meta property="og:title" content={`${title} | Rafee Jenkins`} />
+            <meta name='author' content='Rafee Jenkins' />
+            <meta property="og:image" content={img} />
         </Head>
     )
 }
