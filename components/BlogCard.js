@@ -7,15 +7,9 @@ import Image from 'next/image';
 export default function BlogCard({ info }) {
   return (
     <Card sx={{ padding: 3 }}>
-      <CardMedia
-        title='test'
-        sx={{ height: 200 }}>
-        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-          <Image src={info.featuredImage} fill={true} alt={'title'} />
-        </div>
-      </CardMedia>
-      <CardContent>
 
+      <Image src={info.featuredImage} width={500} height={500} alt={'title'} />
+      <CardContent>
         <Link href={`/blog/${info.slug}`} passHref>
           <div>
             <Typography variant="h4" className="title">

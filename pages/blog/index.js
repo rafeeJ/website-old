@@ -25,7 +25,7 @@ export default function BlogPage({ posts }) {
                 {
                     posts.map((frontMatter, idx) => {
                         return (
-                            <Grid item key={idx} xs={1} >
+                            <Grid item key={idx} xs={1} alignItems={'stretch'}>
                                 <BlogCard info={frontMatter} />
                             </Grid>
                         )
