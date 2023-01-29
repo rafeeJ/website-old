@@ -1,13 +1,19 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from "next/link"
-import dayjs from 'dayjs'
-import { getAllArticles } from '../../src/utils/mdx'
-import Layout from '../../components/Layout'
-import { Card, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
+import { logEvent } from 'firebase/analytics'
+import React, { useEffect } from 'react'
 import BlogCard from '../../components/BlogCard'
+import Layout from '../../components/Layout'
+import { analytics } from '../../firebase/clientApp'
+import { getAllArticles } from '../../src/utils/mdx'
 
 export default function BlogPage({ posts }) {
+
+    useEffect(() => {
+        logEvent(analytics, 'screen_view', {
+            firebase_screen: 'Blog'
+        })
+    }, [])
+
     return (
         <Layout>
             <div className='pb-4'>

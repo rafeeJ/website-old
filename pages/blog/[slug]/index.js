@@ -1,21 +1,31 @@
-import React from 'react'
+import { Card } from '@mui/material'
+import dayjs from 'dayjs'
+import { logEvent } from 'firebase/analytics'
+import 'highlight.js/styles/atom-one-dark-reasonable.css'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
 import Image from 'next/image'
-import rehypeSlug from 'rehype-slug'
-import { MDXRemote } from 'next-mdx-remote'
-import rehypeHighlight from 'rehype-highlight'
-import rehypeCodeTitles from 'rehype-code-titles'
-import { serialize } from 'next-mdx-remote/serialize'
-import 'highlight.js/styles/atom-one-dark-reasonable.css'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import dayjs from 'dayjs'
-import { getArticleFromSlug, getSlug } from '../../src/utils/mdx'
-import Layout from '../../components/Layout'
-import { Card, Divider } from '@mui/material'
 import { useRouter } from 'next/router'
-import me from '../../public/me.png'
+import React, { useEffect } from 'react'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeCodeTitles from 'rehype-code-titles'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeSlug from 'rehype-slug'
+import Layout from '../../../components/Layout'
+import { analytics } from '../../../firebase/clientApp'
+import me from '../../../public/me.png'
+import { getArticleFromSlug, getSlug } from '../../../src/utils/mdx'
 
 export default function Blog({ post: { source, frontmatter } }) {
+
+    useEffect(() => {
+        logEvent(analytics, 'blog_view', {
+            firebase_screen: frontmatter.title,
+        })
+    }, [frontmatter.title])
+
+
     return (
         <Layout header={<BlogHead title={frontmatter.title} tagline={frontmatter.excerpt} keywords={frontmatter.keywords} img={frontmatter.featuredImage} />}>
             <div className='pb-4'>

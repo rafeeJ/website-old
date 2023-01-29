@@ -23,30 +23,35 @@ export default function Header() {
                 <Link
                   href={"/"}
                   className="hover:bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium">
-                  
-                    Home
-                  
+                  Home
                 </Link>
                 <Link
                   href={"/projects"}
                   className="hover:bg-gray-700 hover:text-white text-darkp px-3 py-2 rounded-md text-sm font-medium">
-                  
-                    Projects
-                  
+
+                  Projects
+
                 </Link>
                 <Link
                   href={"/events"}
                   className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  
-                    Events
-                  
+
+                  Events
+
                 </Link>
                 <Link
                   href={"/about"}
                   className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  
-                    About
-                  
+
+                  About
+
+                </Link>
+                <Link
+                  href={"/blog"}
+                  className="text-darkp hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+
+                  Blog
+
                 </Link>
                 <a
                   href="#"
@@ -120,30 +125,37 @@ export default function Header() {
               <Link
                 href={"/"}
                 className="hover:bg-gray-700 hover:text-white text-darkp block px-3 py-2 rounded-md text-base font-medium">
-                
-                  Home
-                
+
+                Home
+
               </Link>
               <Link
                 href={"/projects"}
                 className="hover:bg-gray-700 hover:text-white text-darkp block px-3 py-2 rounded-md text-base font-medium">
-                
-                  Projects
-                
+
+                Projects
+
               </Link>
               <Link
                 href={"/events"}
                 className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                
-                  Events
-                
+
+                Events
+
               </Link>
               <Link
                 href={"/about"}
                 className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                
-                  About
-                
+
+                About
+
+              </Link>
+              <Link
+                href={"/blog"}
+                className="text-darkp hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+
+                Blog
+
               </Link>
 
               <a
