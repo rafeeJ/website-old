@@ -15,6 +15,7 @@ import rehypeSlug from 'rehype-slug'
 import Layout from '../../../components/Layout'
 import { analytics } from '../../../firebase/clientApp'
 import me from '../../../public/me.png'
+import YouTube from '../../../components/YouTube'
 import { getArticleFromSlug, getSlug } from '../../../src/utils/mdx'
 
 export default function Blog({ post: { source, frontmatter } }) {
@@ -35,7 +36,11 @@ export default function Blog({ post: { source, frontmatter } }) {
                 <div className='flex justify-center pb-2'>
                     <Card className='p-4 inline-flex align-middle'>
                         <div className="content prose-sm md:prose dark:prose-invert">
-                            <Image src={frontmatter.featuredImage} alt={'Header Image'} width={1000} height={200} />
+                            {
+                                frontmatter.featuredVideo ? <YouTube id={frontmatter.featuredVideo} /> :
+                                    <Image src={frontmatter.featuredImage} alt={'Header Image'} width={1000} height={200} />
+
+                            }
                             <h1>{frontmatter.title}</h1>
 
 
@@ -44,7 +49,7 @@ export default function Blog({ post: { source, frontmatter } }) {
                                 {frontmatter.readingTime}
                             </p>
                             <div className='not-prose m-0 border border-black/25 mb-2' />
-                            <MDXRemote {...source} components={{ Image }} />
+                            <MDXRemote {...source} components={{ Image, YouTube }} />
                             <div className='not-prose m-0 border border-black/25 mb-2' />
                             <Author />
                         </div>
