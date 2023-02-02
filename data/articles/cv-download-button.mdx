@@ -8,22 +8,47 @@ featuredImage: '/blog_thumbnails/download.png'
 featuredVideo: 'Ux1BiA6ZWbI'
 ---
 
-Love Island, the hit dating reality show, has a huge audience that tunes in to watch the drama unfold in real-time. But have you ever wondered how the show is able to stream live to millions of viewers without interruption?
+Last year, I added by far my favourite feature onto my [website](https://rafeejenkins.com/) - the download CV button. 
+I loved it so much, that I made a video - that you can see above!
 
-The answer lies in the power of the cloud. ITV, the network behind Love Island, has moved its live channel delivery to the cloud using Amazon Web Services.
+At the time of creation, I thought it was a wicked idea: recruiters would visit my site and instantly smash the "download my CV" button, and I would be drowning in jobs in no time...
+Well that didn't happen, but I had a lot of fun implementing it. I showed the code to my colleagues/friends, and they loved it too! So much so, they added it to their website (Thanks Dan).
 
-## How does ITV use AWS?
-By using AWS, ITV is able to quickly and efficiently deliver its content to viewers. The show uses Amazon Elastic Transcoder to convert the live feed into multiple bitrates and resolutions, allowing viewers to stream the show on a variety of devices.
+## How does it work?
 
-In addition, ITV uses Amazon CloudFront to distribute the show with low latency, ensuring a high-quality viewing experience for all. This allows for faster innovation and the ability to launch new channels and features, as well as reducing costs by eliminating the need for expensive on-premises hardware.
+I store and edit my CV in a Google Doc on my personal account. I prefer this way since I am used to Google Docs, and don't really want to faff around with MD(X) if I don't have to.
 
-So the next time you're tuned into Love Island, remember that it's not just the islanders making waves, but also the power of the cloud behind the scenes.
+The rest is made up of these three things:
+- Google Drive API 
+- [downloadjs](https://www.npmjs.com/package/downloadjs)
+- [axios](https://www.npmjs.com/package/axios)
 
-## What are the benefits for ITVX?
-The benefits of the cloud are going to be very similar for ITV as other projects.
-- Faster innovation
-- Reduced costs
-- Ability to launch new channels and features quickly
+And.... here's the function that does the heavy lifting:
 
-## References
-* [AWS Article](https://aws.amazon.com/blogs/media/prmbp-itv-moves-delivery-of-live-channels-into-the-cloud-to-accelerate-innovation/)
+```js
+export const downloadCV = async () => {
+    const url = `https://www.googleapis.com/drive/v3/files/${import.meta.env.VITE_DOCUMENT_ID}/export?key=${import.meta.env.VITE_API_KEY}`
+    const response = await axios.get(url, { responseType: 'blob', params: { 'mimeType': 'application/pdf' } })
+    try {
+        download(response.data, 'Name_Of_your_file.pdf', 'application/pdf')
+    } catch (error) {
+        console.debug(`Error getting file: ${error}`)
+    }
+}
+```
+
+It's really simple: all it does is make a GET request to the Google Drive API using Axios, and downloads the binary object it recieves. 
+
+## How do I get the variables?
+
+You need to create enable the Google Drive API in your Google Cloud project, and then restrict an API key to the Drive API.
+
+To get the Document ID, you just grab it from the URL of your Google Doc. 
+
+If that didn't make sense, please watch the video hehehe.
+
+## Just give me the code.
+
+Ok wow, is this relationship purely transactional? fine.
+
+I have a [full working example in React](https://github.com/rafeeJ/download-cv-site) that you can use.
