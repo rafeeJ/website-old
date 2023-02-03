@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <nav className="bg-offwhite">
-      <div className="max-w-7xl ml-10 pr-4 sm:pr-6 lg:pr-8">
+      <div className="max-w-7xl md:ml-10 pr-4 sm:pr-6 lg:pr-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">

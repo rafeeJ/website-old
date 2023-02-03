@@ -6,7 +6,7 @@ export default function Layout({ children, header }) {
         <div className="flex flex-col bg-offwhite min-h-screen justify-between">
             {header ? header : <HeadTop />}
             <Header className="h-10" />
-            <main className="mb-auto bg-offwhite mx-10">{children}</main>
+            <main className="mb-auto bg-offwhite md:mx-10">{children}</main>
             <footer className="justify-items-center bg-offwhite h-10 flex justify-center">
                 <p className="font-merri text-center m-3">{new Date().getFullYear()} Rafee Jenkins</p>
                 <p className="font-merri text-center m-3">-</p>

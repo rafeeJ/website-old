@@ -35,7 +35,7 @@ export default function Blog({ post: { source, frontmatter } }) {
             <div className="article-container justify-center">
                 <div className='flex justify-center pb-2'>
                     <Card className='p-4 inline-flex align-middle'>
-                        <div className="content prose-sm md:prose dark:prose-invert">
+                        <div className="prose prose-pre:w-[90vw] md:prose-pre:w-auto dark:prose-invert">
                             {
                                 frontmatter.featuredVideo ? <YouTube id={frontmatter.featuredVideo} /> :
                                     <Image src={frontmatter.featuredImage} alt={'Header Image'} width={1000} height={200} />
