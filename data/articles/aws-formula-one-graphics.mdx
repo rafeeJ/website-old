@@ -1,0 +1,61 @@
+---
+title: How does Formula 1 use AWS?
+excerpt: We see the graphics on screen, but how does Formula 1 use AWS to make it all happen?
+author: Rafee Jenkins
+publishedAt: '02/10/2023'
+keywords: ['Formula 1', 'F1', 'Cloud', 'AWS']
+featuredImage: '/blog_thumbnails/download.png'
+featuredVideo: 'z4f1EoCMSL0'
+---
+
+Welcome to the world of Formula 1, where speed and technology go hand in hand. 
+
+As cars zoom past, it's easy to get lost in the excitement and as a software developer, I've always been intrigued by the generation of information during races. 
+If you've watched F1, you will have seen that AWS is the sport's preferred technical partner. AWS has published a series of articles online which delve much deeper into these graphics, so if you are interested - I would recommend checking them out! 
+
+## Preamble
+
+Before diving into each graphic, let's take a look at where AWS gets its data. 
+
+Each racecar is equipped with over 120 sensors generating over 1.1 million telemetry data points per second transmitted from the cars to the pits during a Grand Prix.
+
+This data covers everything from car speed and acceleration to steering angle, energy recovery system, fuel mass, and drag reduction system.
+
+
+So where does all this data go? Well, let's run through this graphic: 
+
+![image](https://d1.awsstatic.com/F1_architecture_desktop.de06f4e264558d3094709268c230aaf93fbe1c68.png)
+The captured signal begins its journey at the race track, which is sent to AWS via an HTTP call to API Gateway. The race logic is hosted as a Lambda function and updates the race state stored in a DynamoDB. If the function determines a prediction is needed, it uses the model trained in SageMaker and returns the prediction back to the broadcasting center. This all happens in just half a second.
+
+
+Right… that's enough backstory, let's jump into the actual graphics.
+
+
+## Start Analysis
+First, let's look at the start analysis graphic. 
+![image](https://i.ytimg.com/vi/XKwZfBRBShI/maxresdefault.jpg)
+
+The aim of Start Analysis is to give the fans a more detailed view of how each driver is able to exploit performance at the start of a grand prix. It takes live speed and acceleration data, and compares it with the exact time the lights went out to calculate how each driver performed off the line. It is worth noting that this graphic is only available after a delay, and cannot be done live due to processing times.
+
+There are a lot of calculations being done behind the scenes, as the internal clocks for each car are not synchronised - so this must be done before the generation of the graphic. 
+The main effort comes from synchronising the cars with the F1 timing system. After that's done, the cars are also synchronised with transponders around the circuit to give a final reaction time output, which can be broadcasted to viewers.
+
+## Pit Strategy Battle
+The next graphic I'll be covering is the Pit Strategy Battle.
+![image](https://www.tvbeurope.com/wp-content/uploads/2019/03/image001.jpg)
+
+It provides fans with real-time insight on the position of the two rival drivers, the predicted gap after their respective pit stops, and the percentage chance of an overtake. This helps fans to assess how successful each driver's strategy will be in real time and its potential outcome.
+
+Undercutting and overcutting are strategies used by F1 teams during close racing scenarios  with the margin between success and failure measured in tenths of a second. Predictions are made using current race and tyre data, alongside historical race data. Again, Sagemaker is used to estimate the time gain or loss for a driver compared to rivals.
+
+## Corner Analysis
+The final graphic we will be looking at is the corner analysis graphic. 
+![image](https://www.formula1.com/content/dam/fom-website/Upgrade/AWS%20Braking%202.jpg.transform/9col-retina/image.jpg)
+
+
+The intention of this graphic was to understand the speed of the car through a given corner, in microscopic detail. This gives the fans an insight as to where a car is stronger or weaker than the opposition. For example, last year's Mercedes was incredibly strong in the low speed corner but was less so in the high-speed corner when compared to the RedBull and in fact the trend completely reversed when we considered straight-line performance. As a fan, you couldn't really tell that this was the case if we didn't have this graphic!
+
+This graphic works by breaking down car telemetry into several phases: turn in phase, mid corner phase, and exit phase. For each phase, speed, acceleration and throttle are used to calculate an optimal corner, which is then compared to the driver's attempt.
+
+## Conclusion
+So there we have it! A little breakdown of some of the graphics seen on TV, and a bit of background of cloud usage in one of the most popular sports right now. 
