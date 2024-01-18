@@ -15,9 +15,9 @@ const config: Config = {
       },
     },
     fontFamily: {
-      sans: ['var(--font-karla)'],
-      mono: ['var(--font-inconsolata)']
-    }
+      sans: ["var(--font-karla)"],
+      mono: ["var(--font-inconsolata)"],
+    },
   },
   plugins: [],
 };
