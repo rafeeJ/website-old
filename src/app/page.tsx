@@ -1,12 +1,11 @@
-import Image from "next/image";
+import { Intro } from "@/features/homepage/intro";
+import { Bio } from "@/features/homepage/bio";
 
 export default function Home() {
   return (
     <main>
-      <section>
-        <h1 className={"text-3xl font-sans"}>Rafee Jenkins</h1>
-        <p className={"font-mono"}>Software engineer</p>
-      </section>
+      <Bio />
+      <Intro />
     </main>
   );
 }
