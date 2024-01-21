@@ -3,22 +3,24 @@ import {
   SiReact,
   SiTypescript,
 } from "@icons-pack/react-simple-icons";
+import { Icon } from "@/components/icon";
 
 export const Intro = () => {
   return (
     <section className="mx-auto py-10 border-b border-gray-300">
-      <div className={"pb-2"}>
-        <h1 className={"font-medium"}>Hey, I'm Rafee 👋</h1>
-      </div>
+      <h1 className={"font-medium pb-2"}>Hey, I&apos;m Rafee 👋</h1>
       <div>
-        <p>
-          I'm currently forecasting chicken sales with at Nando's UK&I with some
-          of my favourite technologies:{" "}
-        </p>
-        <div className={"flex flex-row gap-2"}>
-          <SiReact />
-          <SiTypescript />
-          <SiGooglecloud />
+        <div className={"flex flex-col pb-2"}>
+          <p>
+            I&apos;m currently forecasting chicken sales and developing
+            frontends at Nando&apos;s UK&I.
+          </p>
+          <p>Some of my favourite technologies at the moment are:</p>
+        </div>
+        <div className={"flex flex-col md:items-start items-center gap-3 ml-2"}>
+          <Icon icon={<SiReact />} text={"React"} />
+          <Icon icon={<SiTypescript />} text={"TypeScript"} />
+          <Icon icon={<SiGooglecloud />} text={"GCP"} />
         </div>
       </div>
     </section>
