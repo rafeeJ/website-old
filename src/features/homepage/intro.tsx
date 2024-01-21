@@ -8,7 +8,7 @@ import { Icon } from "@/components/icon";
 export const Intro = () => {
   return (
     <section className="mx-auto py-10 border-gray-300">
-      <h1 className={"font-medium pb-2"}>Hey, I&apos;m Rafee 👋</h1>
+      <h1 className={"font-medium pb-2"}>Hey, I&apos;m Rafee 👋🏽</h1>
       <div>
         <div className={"flex flex-col pb-2 gap-0.5"}>
           <p>
